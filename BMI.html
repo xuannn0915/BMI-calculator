@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Testing</title>
+
+    <!-- reset css -->
+    <link rel="stylesheet" href="css/reset.css">
+    <!-- BMI css -->
+    <link rel="stylesheet" href="css/BMI.min.css">
+    <!-- css bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div class="top">
+        <div class="calc container">
+            <img src="images/BMICLogo.png" alt="">
+            <div class="calc-count">
+                <label for="height" class="input-title">身高cm
+                    <input type="text" name="height" id="height" placeholder="請輸入身高">
+                </label>
+                <label for="weight">體重kg
+                    <input type="text" name="weight" id="weight" placeholder="請輸入體重">
+                </label>
+            </div>
+            <input type="button" value="看結果" class="calc-btn">
+
+            <div class="resultBtn" style="display:none;">
+                <div class="left">
+                    <div class="BMInum">
+                    </div>
+                    <span>BMI</span>
+                    <button class="refresh">
+                        <a href="#">
+                            <i class="bi bi-arrow-clockwise "></i>
+                        </a>
+                    </button>
+                </div>
+                <p class="alert"></p>
+            </div>
+
+        </div>
+    </div>
+    <div class="middle">
+        <div class="container">
+            <h2>BMI紀錄</h2>
+            <ul class="list">
+            </ul>
+            <a href="#" class="clear">清除歷史紀錄</a>
+        </div>
+    </div>
+    </div>
+    <div class="bottom">
+        <img src="https://hexschool.github.io/JavaScript_HomeWork/assets/BMICLogo.png" alt="">
+    </div>
+
+
+
+    <!-- BMI Js -->
+    <script src="js/BMI.js"></script>
+</body>
+
+</html>

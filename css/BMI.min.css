@@ -1,0 +1,235 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  background: #fafafa;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.top {
+  background: #424242;
+  padding: 74px 0;
+}
+.top .calc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top .calc .input-title {
+  margin-bottom: 24px;
+}
+.top .calc label {
+  display: block;
+  color: #FFD366;
+}
+.top .calc label input {
+  display: block;
+  border: solid 1px #FFD366;
+  width: 250px;
+  height: 40px;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  padding: 8px 16px;
+  margin-top: 8px;
+}
+.top .calc label input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.top .calc label input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.top .calc label input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.top .calc .calc-btn {
+  font-size: 24px;
+  color: #424242;
+  background: #FFD366;
+  padding: 48px 24px;
+  border-radius: 100%;
+  border: 0;
+}
+.top .calc .calc-btn:hover {
+  box-shadow: 0px 1px 6px 3px rgba(255, 196, 50, 0.64);
+}
+.top .calc .calc-btn:active {
+  background: #DEA821;
+}
+.top .calc .resultBtn {
+  align-items: center;
+  font-size: 36px;
+}
+.top .calc .resultBtn .red {
+  color: #FF1200;
+}
+.top .calc .resultBtn .red-border {
+  border: 6px solid #FF1200;
+  border-radius: 100%;
+  padding: 40px 24px;
+  position: relative;
+  text-align: center;
+  margin-right: 16px;
+}
+.top .calc .resultBtn .red-bg {
+  background: #FF1200;
+}
+.top .calc .resultBtn .orange-d {
+  color: #FF6C03;
+}
+.top .calc .resultBtn .orange-d-border {
+  border: 6px solid #FF6C03;
+  border-radius: 100%;
+  padding: 40px 24px;
+  position: relative;
+  text-align: center;
+  margin-right: 16px;
+}
+.top .calc .resultBtn .orange-d-bg {
+  background: #FF6C03;
+}
+.top .calc .resultBtn .orange-l {
+  color: #FF982D;
+}
+.top .calc .resultBtn .orange-l-border {
+  border: 6px solid #FF982D;
+  border-radius: 100%;
+  padding: 40px 24px;
+  position: relative;
+  text-align: center;
+  margin-right: 16px;
+}
+.top .calc .resultBtn .orange-l-bg {
+  background: #FF982D;
+}
+.top .calc .resultBtn .blue {
+  color: #31BAF9;
+}
+.top .calc .resultBtn .blue-border {
+  border: 6px solid #31BAF9;
+  border-radius: 100%;
+  padding: 40px 24px;
+  position: relative;
+  text-align: center;
+  margin-right: 16px;
+}
+.top .calc .resultBtn .blue-bg {
+  background: #31BAF9;
+}
+.top .calc .resultBtn .green {
+  color: #86D73F;
+}
+.top .calc .resultBtn .green-border {
+  border: 6px solid #86D73F;
+  border-radius: 100%;
+  padding: 40px 24px;
+  position: relative;
+  text-align: center;
+  margin-right: 16px;
+}
+.top .calc .resultBtn .green-bg {
+  background: #86D73F;
+}
+.top .calc .resultBtn .BMInum {
+  font-size: 32px;
+  margin-bottom: 4px;
+}
+.top .calc .resultBtn span {
+  font-size: 14px;
+  display: block;
+}
+.top .calc .resultBtn p {
+  font-size: 32px;
+}
+.top .calc .resultBtn button {
+  position: absolute;
+  bottom: 6px;
+  right: 0;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  border: 0;
+}
+
+.middle {
+  padding: 48px 0;
+}
+.middle .clear {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: red;
+}
+.middle h2 {
+  text-align: center;
+  color: #424242;
+  font-size: 24px;
+  margin-bottom: 32px;
+}
+.middle .item {
+  background: white;
+  padding: 24px 16px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.middle .item .number {
+  display: flex;
+}
+.middle span {
+  display: flex;
+  align-items: center;
+  margin-left: 32px;
+}
+.middle .BMI-num::before {
+  content: "BMI";
+  font-size: 12px;
+  margin-right: 8px;
+}
+.middle .weight-num::before {
+  content: "weight";
+  font-size: 12px;
+  margin-right: 8px;
+}
+.middle .height-num::before {
+  content: "height";
+  font-size: 12px;
+  margin-right: 8px;
+}
+.middle .safe {
+  border-left: 7px solid #86D73F;
+}
+.middle .light {
+  border-left: 7px solid #31BAF9;
+}
+.middle .fat {
+  border-left: 7px solid #FF982D;
+}
+.middle .too-fat {
+  border-left: 7px solid #FF6C03;
+}
+.middle .danger {
+  border-left: 7px solid #FF1200;
+}
+
+.bottom {
+  width: 100%;
+  background: #FFD366;
+  padding: 16px 0;
+  display: flex;
+  justify-content: center;
+}/*# sourceMappingURL=BMI.min.css.map */

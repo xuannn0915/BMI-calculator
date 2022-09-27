@@ -12,12 +12,8 @@ var weight = document.getElementById('weight');
 
 btn.addEventListener('click', counting);
 clear.addEventListener('click', clearhistory);
-refresh.addEventListener('click', restart);
+refresh.addEventListener('click', counting);
 
-// blank alert
-function blankAlert(){
-
-}
 
 // clear history
 function clearhistory(e) {
@@ -27,18 +23,6 @@ function clearhistory(e) {
     data = [];
 }
 
-// refresh
-function restart(e) {
-    e.preventDefault();
-    height.value = "";
-    weight.value = "";
-    btn.style.display = 'block';
-    resultBtn.style.display = 'none';
-    left.removeAttribute('class');
-    refresh.removeAttribute('class');
-    alertWord.removeAttribute('class');
-}
-
 // local storage update
 function counting(e) {
     e.preventDefault();
@@ -46,14 +30,13 @@ function counting(e) {
     var result = weight.value / (height.value * height.value * 0.0001)
     result = Math.round(result * 100) / 100;
 
-    if(result == "NaN" || result == "null") {
-        alert('請輸入正確的數值!');
+    console.log(result);
+
+    if (height.value== ''|| height.value== 0) {
+        alert("請輸入正確的數值，且不可為0");
         return;
-    }else if (height.value== '') {
-        alert("您尚未輸入身高！");
-        return;
-    }else if (weight.value == '') {
-        alert ("您尚未輸入體重！");
+    }else if (weight.value == '' || weight.value == 0) {
+        alert ("請輸入正確的數值，且不可為0");
         return;
     }
 
@@ -61,8 +44,8 @@ function counting(e) {
 
     var item = {
         content: result,
-        H: height,
-        W: weight,
+        H: height.value,
+        W: weight.value,
     };
     data.unshift(item);
     localStorage.setItem('itemData', JSON.stringify(data));

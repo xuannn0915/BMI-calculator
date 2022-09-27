@@ -6,21 +6,58 @@ var resultBtn = document.querySelector('.resultBtn');
 var refresh = document.querySelector('.refresh');
 var left = document.querySelector('.left');
 var alertWord = document.querySelector('.alert');
+var height = document.getElementById('height');
+var weight = document.getElementById('weight');
+
 
 btn.addEventListener('click', counting);
 clear.addEventListener('click', clearhistory);
 refresh.addEventListener('click', restart);
 
+// blank alert
+function blankAlert(){
+
+}
+
+// clear history
+function clearhistory(e) {
+    e.preventDefault();
+    list.innerHTML = "";
+    localStorage.clear();
+    data = [];
+}
+
+// refresh
+function restart(e) {
+    e.preventDefault();
+    height.value = "";
+    weight.value = "";
+    btn.style.display = 'block';
+    resultBtn.style.display = 'none';
+    left.removeAttribute('class');
+    refresh.removeAttribute('class');
+    alertWord.removeAttribute('class');
+}
 
 // local storage update
 function counting(e) {
     e.preventDefault();
-    btn.style.display = 'none';
 
-    var height = document.getElementById('height').value;
-    var weight = document.getElementById('weight').value;
-    var result = weight / (height * height * 0.0001)
+    var result = weight.value / (height.value * height.value * 0.0001)
     result = Math.round(result * 100) / 100;
+
+    if(result == "NaN" || result == "null") {
+        alert('請輸入正確的數值!');
+        return;
+    }else if (height.value== '') {
+        alert("您尚未輸入身高！");
+        return;
+    }else if (weight.value == '') {
+        alert ("您尚未輸入體重！");
+        return;
+    }
+
+    btn.style.display = 'none';
 
     var item = {
         content: result,
@@ -39,7 +76,6 @@ function resultContent(item) {
     var BMInum = document.querySelector('.BMInum');
     var BMI = item[0].content;
     BMInum.textContent = BMI;
-    console.log(BMI);
 
     if (BMI > 35) {
         left.setAttribute('class', 'red red-border');
@@ -71,7 +107,7 @@ function resultContent(item) {
         refresh.setAttribute('class', 'green-bg');
         alertWord.textContent = '理想';
     }
-    else if (BMI <= 18.5) {
+    else if (BMI>0 && BMI <= 18.5) {
         left.setAttribute('class', 'blue blue-border');
         alertWord.setAttribute('class', 'blue');
         refresh.setAttribute('class', 'blue-bg');
@@ -157,26 +193,5 @@ function updateList(item) {
         }
         list.innerHTML = str;
     }
-
-}
-
-// clear history
-function clearhistory(e) {
-    e.preventDefault();
-    list.innerHTML = "";
-    localStorage.clear();
-    data = [];
-}
-
-// refresh
-function restart(e) {
-    e.preventDefault();
-    height.value = "";
-    weight.value = "";
-    btn.style.display = 'block';
-    resultBtn.style.display = 'none';
-    left.removeAttribute('class');
-    refresh.removeAttribute('class');
-    alertWord.removeAttribute('class');
 
 }

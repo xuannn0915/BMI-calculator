@@ -33,7 +33,7 @@ function counting(e) {
     // 計算BMI公式
     var result = weight.value / (height.value * height.value * 0.0001)
     // 取小數點後兩位
-    result = Math.round(result * 100) / 100;
+    result = result.toFixed(2);
 
     // 判斷輸入匡內的數值是否為空值或0
     if (height.value == '' || height.value == 0) {

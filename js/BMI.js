@@ -30,8 +30,6 @@ function counting(e) {
     var result = weight.value / (height.value * height.value * 0.0001)
     result = Math.round(result * 100) / 100;
 
-    console.log(result);
-
     if (height.value== ''|| height.value== 0) {
         alert("請輸入正確的數值，且不可為0");
         return;

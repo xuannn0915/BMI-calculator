@@ -181,7 +181,38 @@ body {
             }
         }
 
+        
+    }
+    @media (max-width:768px){
+        padding: 48px;
+        .calc{
+            flex-direction: column;
+    
+            img{
+                margin-bottom: 24px;
+            }
+            .calc-count{
+                margin-bottom: 24px;
+                width: 60%;
+                input{
+                    width: 100%;
+                }
+            }
+        }
+    }
 
+    @media (max-width:375px) {
+        .calc-count{
+            width: 80%;
+        }
+
+        .resultBtn{
+            flex-direction: column;
+
+            p{
+                margin-top: 16px;
+            }
+        }
     }
 }
 
@@ -263,6 +294,35 @@ body {
 
     .danger {
         border-left: 7px solid #FF1200;
+    }
+
+    @media (max-width:768px) {
+        .list{
+            width: 80%;
+            margin: 0 auto;
+
+            .item{
+                display: block;
+            }
+
+            .number{
+                margin-top: 16px;
+                flex-wrap: wrap;
+            }
+
+            span{
+                margin-left: 0;
+                margin-right: 32px;
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+    @media (max-width:375px) {
+
+        .number{
+            flex-wrap: wrap;
+        }
     }
 }
 

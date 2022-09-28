@@ -30,9 +30,8 @@ function counting(e) {
     var status = '';
     var bar = '';
 
-    // 計算BMI公式
+    // 計算BMI公式，並且取小數點後兩位
     var result = weight.value / (height.value * height.value * 0.0001)
-    // 取小數點後兩位
     result = result.toFixed(2);
 
     // 判斷輸入匡內的數值是否為空值或0
